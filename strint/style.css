@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Comic Sans MS';
+    src: url('./fonts/ComicSansMS.woff2') format('woff2'),
+        url('./fonts/ComicSansMS.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-    font-weight: 400;
-    src: local('Comic Sans MS'), local('ComicSansMS-Regular'),
-        url(http://allfont.ru/cache/fonts/comic-sans-ms_53a8778a817839ef2dbc5dc94ce14334.woff) format('woff'),
-        url(http://allfont.ru/cache/fonts/comic-sans-ms_53a8778a817839ef2dbc5dc94ce14334.ttf) format('truetype');
+    font-display: swap;
 }
 * 
 {
@@ -14,7 +14,6 @@ margin: 0px;
 body 
 {
     font-family: 'Italianno';
-    /* font-family: 'Courier New', Courier, monospace !important; */
 background-color: aqua;
 }
 
