@@ -1,10 +1,20 @@
+@font-face {
+    font-family: 'Comic Sans MS';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Comic Sans MS'), local('ComicSansMS-Regular'),
+        url(http://allfont.ru/cache/fonts/comic-sans-ms_53a8778a817839ef2dbc5dc94ce14334.woff) format('woff'),
+        url(http://allfont.ru/cache/fonts/comic-sans-ms_53a8778a817839ef2dbc5dc94ce14334.ttf) format('truetype');
+}
 * 
 {
 margin: 0px;
-font-family: 'Italianno';
+
 }
 body 
 {
+    font-family: 'Italianno';
+    /* font-family: 'Courier New', Courier, monospace !important; */
 background-color: aqua;
 }
 
@@ -152,5 +162,9 @@ font-size: 100px;
 }
 .easter2{
     width: 25px;
-    height: 10px;
+    height: 15px;
+}
+.komik{
+    width: 15px;
+    height: 15px;
 }

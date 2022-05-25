@@ -14,3 +14,9 @@ var keyHandler = function (event) {
 
 };
 document.addEventListener('keydown', keyHandler, false);
+
+
+const sans = () =>{
+
+	document.getElementsByTagName("body")[0].setAttribute("style", "font-family: 'Comic Sans MS' !important;")
+}
