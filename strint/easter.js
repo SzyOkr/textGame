@@ -15,7 +15,7 @@ var keyHandler = function (event) {
 	// If complete, alert and reset
 	if (pattern.length === current) {
 		current = 0;
-		window.alert('cum monster');
+		window.location.href = "mapa.html";
 	}
 
 };
