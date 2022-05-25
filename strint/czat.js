@@ -61,3 +61,4 @@ const textNodes = [
     }
 ]
 startGame()
+//noob
