@@ -6,3 +6,38 @@ SPD
 STN
 DEF
 USG
+
+
+Bazowe statystyki
+
+Rycerz
+HP: 0
+ATK: 0
+SPD: 0
+STN: 0
+DEF: 0 
+USG: 0
+
+Jeźdzca
+HP: 0
+ATK: 0
+SPD: 0
+STN: 0
+DEF: 0 
+USG: 0
+
+Łucznik
+HP: 0
+ATK: 0
+SPD: 0
+STN: 0
+DEF: 0 
+USG: 0
+
+Zabójca
+HP: 0
+ATK: 0
+SPD: 0
+STN: 0
+DEF: 0 
+USG: 0
