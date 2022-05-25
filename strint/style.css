@@ -96,6 +96,7 @@ outline: none;
 .btn:hover
 {
 border-color: black;
+background-color: green;
 }
 
 .infohero
