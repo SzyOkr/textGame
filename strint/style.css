@@ -24,7 +24,7 @@ text-decoration: none;
 display: inline;
 list-style-type: none;
 text-transform: uppercase;
-padding: 25px;
+padding: 3rem;
 }
 
 nav 
@@ -130,7 +130,7 @@ text-align: center;
 font-size: 100px;
 }
 .mapka{
-    font-size: 75px;
+    font-size:3rem;
     display: grid;
     text-align: center;
 }
