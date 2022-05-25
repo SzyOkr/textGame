@@ -76,6 +76,27 @@ background-color: #ffffff;
 opacity:0.75;
 margin-top: 30vh;
 }
+.btn-grid 
+{
+display: grid;
+grid-template-columns: repeat(2, auto);
+gap: 10px;
+margin-top: 20px;
+}
+.bt 
+{
+background-color: blue;
+border: 1px solid black;
+border-radius: 5px;
+padding: 5px;
+color: white;
+outline: none;
+}
+
+.bt:hover
+{
+border-color: black;
+}
 
 .infohero
 {
