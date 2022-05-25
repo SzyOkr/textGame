@@ -30,7 +30,7 @@ function showOption(option) {
     return true
 }
 
-function selectOption(option)
+function selectOption(option) {
 
 }
 
