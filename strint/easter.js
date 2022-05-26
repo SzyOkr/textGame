@@ -9,7 +9,7 @@ var keyHandler = function (event) {
 	current++;
 	if (pattern.length === current) {
 		current = 0;
-		window.location.href = "easter.html";
+		window.location.href = "./easter/easter.html";
 	}
 
 };
