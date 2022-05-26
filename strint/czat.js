@@ -1,7 +1,4 @@
-
-
-
-const textElement = document.getElementById('container')
+const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
 
 let state = {}
@@ -20,16 +17,8 @@ function showTextNode(textNodeIndex) {
 
   textNode.options.forEach(option => {
     if (showOption(option)) {
-
-      const button = document.createElement('div')
-      // button.setAttribute("style", `background-image:url('../archer.svg')`)
- 
-      if(option.src !== '')
-        button.setAttribute("style", `background-image:url('${option.src}')`)
-      else  
-        button.innerText = option.text
-
-
+      const button = document.createElement('button')
+      button.innerText = option.text
       button.classList.add('btn')
       button.addEventListener('click', () => selectOption(option))
       optionButtonsElement.appendChild(button)
@@ -53,33 +42,17 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: 'Wybór postaci',
+    text: 'You wake up in a strange place and you see a jar of blue goo near you.',
     options: [
       {
-        src:'../archer.svg',
-        text: '',
-        setState: { archer: true },
+        text: 'Take the goo',
+        setState: { blueGoo: true },
         nextText: 2
       },
       {
-        src:'../knight.png',
-        text: '',
-        setState: { knight: true },
-        nextText: 2
-      },
-      {
-        src:'../assasin.svg',
-        text: '',
-        setState: { assasin: true },
-        nextText: 2
-      },
-      {
-        src:'../rider.svg',
-        text: '',
-        setState: { rider: true },
+        text: 'Leave the goo',
         nextText: 2
       }
-      
     ]
   },
   {
