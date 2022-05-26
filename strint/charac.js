@@ -7,6 +7,8 @@ character.SPD = SPD
 character.STN = STN
 character.DEF = DEF
 character.USG = USG
+
+
 }
 
 isAlive(){
