@@ -10,34 +10,51 @@ USG
 
 Bazowe statystyki
 
+Przeciwnik
+HP: 20
+ATK: 5
+
+Boss
+HP: 50
+ATK: 8
+
 Rycerz
-HP: 0
-ATK: 0
-SPD: 0
-STN: 0
-DEF: 0 
-USG: 0
+HP: 25
+ATK: 3
+SPD: 1
+STN: 7
+DEF: 8 
+USG: 1
 
 Jeźdzca
+<<<<<<< HEAD
+HP: 20
+ATK: 6
+SPD: 9
+STN: 6
+DEF: 6 
+USG: 1
+=======
 HP: 15
 ATK: 69
 SPD: 0
 STN: 0
 DEF: 0 
 USG: 0
+>>>>>>> 4a3a5368c49db53075bfa945738760f9801c97fe
 
 Łucznik
-HP: 0
-ATK: 0
-SPD: 0
-STN: 0
-DEF: 0 
-USG: 0
+HP: 10
+ATK: 6
+SPD: 7
+STN: 1
+DEF: 3 
+USG: 3
 
 Zabójca
-HP: 0
-ATK: 0
-SPD: 0
-STN: 0
-DEF: 0 
-USG: 0
+HP: 18
+ATK: 8
+SPD: 8
+STN: 2
+DEF: 1 
+USG: 2
