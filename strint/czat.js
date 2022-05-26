@@ -42,62 +42,62 @@ function selectOption(option) {
 const textNodes = [
   {
     id: 1,
-    text: 'You wake up in a strange place and you see a jar of blue goo near you.',
+    text: 'Obudziłeś się w dziwnym miejscu i zauważyłeś słoik z białą mazią obok ciebie.',
     options: [
       {
-        text: 'Take the goo',
+        text: 'Weź maź',
         setState: { blueGoo: true },
         nextText: 2
       },
       {
-        text: 'Leave the goo',
+        text: 'Zostaw maź',
         nextText: 2
       }
     ]
   },
   {
     id: 2,
-    text: 'You venture forth in search of answers to where you are when you come across a merchant.',
+    text: 'Wyruszasz w poszukiwaniu odpowiedzi na pytanie, gdzie jesteś, gdy natykasz się na kupca.',
     options: [
       {
-        text: 'Trade the goo for a sword',
+        text: 'Wymień maź wzamian za miecz',
         requiredState: (currentState) => currentState.blueGoo,
         setState: { blueGoo: false, sword: true },
         nextText: 3
       },
       {
-        text: 'Trade the goo for a shield',
+        text: 'Wymień maź wzamian za tarczę',
         requiredState: (currentState) => currentState.blueGoo,
         setState: { blueGoo: false, shield: true },
         nextText: 3
       },
       {
-        text: 'Ignore the merchant',
+        text: 'Odejdź od kupca',
         nextText: 3
       }
     ]
   },
   {
     id: 3,
-    text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
+    text: 'Po opuszczeniu kupca zaczynasz czuć się zmęczony i natrafiasz na małe miasteczko obok groźnie wyglądającego zamku.',
     options: [
       {
-        text: 'Explore the castle',
+        text: 'Zwiedź zamek',
         nextText: 4
       },
       {
-        text: 'Find a room to sleep at in the town',
+        text: 'Znajdź pokój do spania w mieście',
         nextText: 5
       },
       {
-        text: 'Find some hay in a stable to sleep in',
+        text: 'Znajdź siano w stajni do spania',
         nextText: 6
       }
     ]
   },
   {
     id: 4,
-    text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
+    text: 'Jesteś tak zmęczony, że zasypiasz podczas zwiedzania zamku i zostajesz zabity przez jakiegoś strasznego księdza we śnie.',
     options: [
       {
         text: 'Restart',
@@ -107,7 +107,7 @@ const textNodes = [
   },
   {
     id: 5,
-    text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
+    text: 'Bez pieniędzy na zakup pokoju włamujesz się do najbliższej gospody i zasypiasz. Po kilku godzinach snu odnajduje cię właściciel karczmy i każe strażnikowi zamknąć cię w celi.',
     options: [
       {
         text: 'Restart',
@@ -117,34 +117,34 @@ const textNodes = [
   },
   {
     id: 6,
-    text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
+    text: 'Budzisz się wypoczęty i pełen energii gotowy do zwiedzania pobliskiego zamku.',
     options: [
       {
-        text: 'Explore the castle',
+        text: 'Zwiedź zamek',
         nextText: 7
       }
     ]
   },
   {
     id: 7,
-    text: 'While exploring the castle you come across a horrible monster in your path.',
+    text: 'Podczas eksploracji zamku na swojej drodze natrafisz na straszliwego księdza.',
     options: [
       {
-        text: 'Try to run',
+        text: 'Próbuj uciekać',
         nextText: 8
       },
       {
-        text: 'Attack it with your sword',
+        text: 'Zaatakuj go mieczem',
         requiredState: (currentState) => currentState.sword,
         nextText: 9
       },
       {
-        text: 'Hide behind your shield',
+        text: 'Schowaj się za tarczą',
         requiredState: (currentState) => currentState.shield,
         nextText: 10
       },
       {
-        text: 'Throw the blue goo at it',
+        text: 'Rzuć w niego białą mazią',
         requiredState: (currentState) => currentState.blueGoo,
         nextText: 11
       }
@@ -152,7 +152,7 @@ const textNodes = [
   },
   {
     id: 8,
-    text: 'Your attempts to run are in vain and the monster easily catches.',
+    text: 'Twoje próby ucieczki są daremne, a ksiądz bez problemu cię łapie.',
     options: [
       {
         text: 'Restart',
@@ -162,7 +162,7 @@ const textNodes = [
   },
   {
     id: 9,
-    text: 'You foolishly thought this monster could be slain with a single sword.',
+    text: 'Głupio myślałeś, że tego księdza można zabić zwykłym mieczem.',
     options: [
       {
         text: 'Restart',
@@ -172,7 +172,7 @@ const textNodes = [
   },
   {
     id: 10,
-    text: 'The monster laughed as you hid behind your shield and ate you.',
+    text: 'Ksiądz śmiał się, gdy chowałeś się za tarczą po czym zjadł cię.',
     options: [
       {
         text: 'Restart',
@@ -182,10 +182,10 @@ const textNodes = [
   },
   {
     id: 11,
-    text: 'You threw your jar of goo at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing your victory you decide to claim this castle as your and live out the rest of your days there.',
+    text: 'Rzuciłeś słoikiem mazi w księdza i eksplodował. Gdy opadł kurz, zobaczyłeś, że ksiądz został zniszczony. Widząc swoje zwycięstwo, decydujesz się przejąć ten zamek jako swój i przeżyć tam resztę swoich dni.',
     options: [
       {
-        text: 'Congratulations. Play Again.',
+        text: 'Gratuluję. Zagraj ponownie',
         nextText: -1
       }
     ]
