@@ -18,9 +18,57 @@ Boss
 HP: 50
 ATK: 8
 
-Kremówkarz
-HP: 21
-ATK: 37
+--------------------------------------------------------------------------PRZECIWNICY-------------------------------------------------------------------------
+
+Ognisty Diablik
+HP: 10
+ATK: 3
+
+Przeklęte Widmo
+HP: 15
+ATK: 5
+ 
+Latający Ośmiornik
+HP: 3
+ATK: 1
+
+Duchowny
+HP: 5
+ATK: 3
+
+Mag Bitewny
+HP: 20
+ATK: 4
+
+Nieumarły Rycerz
+HP: 20
+ATK: 4
+
+---------------------------------------------------------------------------BOSSOWIE----------------------------------------------------------------------------
+
+Widmowy Król
+HP: 35
+ATK: 6
+
+Podejrzany Ksiądz (faza 1)
+HP: 10
+ATK: 3
+
+Mefistofeles (Podejrzany Ksiądz faza 2)
+HP: 40
+ATK: 8
+
+Pradawny Mistrz Arkanów (Faza 1)
+
+HP: 30
+ATK: 6
+
+Ostatnie Życzenie Mistrza (Faza 2)
+
+HP: 50
+ATK: 8
+
+-----------------------------------------------------------------------------KLASY---------------------------------------------------------------------------------
 
 Rycerz
 HP: 25
