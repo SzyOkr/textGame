@@ -27,21 +27,12 @@ DEF: 8
 USG: 1
 
 Jeźdzca
-<<<<<<< HEAD
 HP: 20
 ATK: 6
 SPD: 9
 STN: 6
 DEF: 6 
 USG: 1
-=======
-HP: 15
-ATK: 69
-SPD: 0
-STN: 0
-DEF: 0 
-USG: 0
->>>>>>> 4a3a5368c49db53075bfa945738760f9801c97fe
 
 Łucznik
 HP: 10
