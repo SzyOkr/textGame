@@ -1,4 +1,4 @@
-const textElement = document.getElementById('text')
+const textElement = document.getElementById('container')
 const optionButtonsElement = document.getElementById('option-buttons')
 
 let state = {}
