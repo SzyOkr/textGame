@@ -12,14 +12,16 @@ class Item {
     
     }
     class miecz extends Item {
-        constructor(name, type) {
+        constructor(type) {
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
+            super();
             this.type = type;
 
+        
             switch(this.type){
-                case "święty":
+                case "Swiety Mcz":
                     this.name = "Święty Miecz"
-                    this.HP = 5;
+                    this.HP = 1;
                     this.ATK = 3;
                     this.SPD = 1;
                     this.STN = 0;
@@ -27,9 +29,9 @@ class Item {
                     this.USG = 1;
                     break;
 
-                case "smoka mroku":
+                case "smoka mroku Mcz":
                     this.name = "Miecz Smoka Mroku"
-                    this.HP = 2;
+                    this.HP = 0;
                     this.ATK = 5;
                     this.SPD = 0;
                     this.STN = 2;
@@ -37,34 +39,34 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "Potężnego Diabła":
+                case "Potężnego Diabła Mcz":
                     this.name = "Miecz Potężnego Diabła"
-                    this.HP = 4;
-                    this.ATK = 1;
+                    this.HP = 0;
+                    this.ATK = 2;
                     this.SPD = 1;
-                    this.STN = 5;
-                    this.DEF = 4;
-                    this.USG = 0;
+                    this.STN = 0;
+                    this.DEF = 0;
+                    this.USG = 1;
                     break;
 
-                case "Bezduszny":
+                case "Bezduszny Mcz":
                     this.name = "Bezduszny Miecz"
                     this.HP = 0;
                     this.ATK = 7;
                     this.SPD = 2;
-                    this.STN = 1;
+                    this.STN = 0;
                     this.DEF = 0;
                     this.USG = 0;
                     break;
 
-                case "Runiczny":
+                case "Runiczny Mcz":
                     this.name = "Runiczny Miecz"
-                    this.HP = 2;
+                    this.HP = 0;
                     this.ATK = 1;
                     this.SPD = 1;
                     this.STN = 8;
-                    this.DEF = 3;
-                    this.USG = 2;
+                    this.DEF = 1;
+                    this.USG = 0;
                     break;
                 
                 default:
@@ -82,7 +84,7 @@ class Item {
             switch(this.type){
                 case "święty":
                     this.name = "Święta Lanca"
-                    this.HP = 4;
+                    this.HP = 0;
                     this.ATK = 2;
                     this.SPD = 2;
                     this.STN = 0;
@@ -95,7 +97,7 @@ class Item {
                     this.HP = 1;
                     this.ATK = 5;
                     this.SPD = 1;
-                    this.STN = 2;
+                    this.STN = 0;
                     this.DEF = 1;
                     this.USG = 0;
                     break;
@@ -122,11 +124,11 @@ class Item {
 
                 case "Runiczny":
                     this.name = "Runiczna Lanca"
-                    this.HP = 3;
-                    this.ATK = 0;
-                    this.SPD = 2;
-                    this.STN = 4;
-                    this.DEF = 6;
+                    this.HP = 0;
+                    this.ATK = 2;
+                    this.SPD = 1;
+                    this.STN = 3;
+                    this.DEF = 2;
                     this.USG = 2;
                     break;
                 
@@ -150,34 +152,34 @@ class Item {
                     this.SPD = 3;
                     this.STN = 1;
                     this.DEF = 0;
-                    this.USG = 1;
+                    this.USG = 0;
                     break;
 
                 case "smoka mroku":
                     this.name = "Łuk Smoka Mroku"
-                    this.HP = 2;
+                    this.HP = 0;
                     this.ATK = 5;
-                    this.SPD = 2;
+                    this.SPD = 1;
                     this.STN = 2;
-                    this.DEF = 1;
+                    this.DEF = 0;
                     this.USG = 0;
                     break;
 
                 case "Potężnego Diabła":
                     this.name = "Łuk Potężnego Diabła"
-                    this.HP = 4;
-                    this.ATK = 1;
+                    this.HP = 2;
+                    this.ATK = 2;
                     this.SPD = 1;
                     this.STN = 5;
-                    this.DEF = 4;
-                    this.USG = 0;
+                    this.DEF = 1;
+                    this.USG = 1;
                     break;
 
                 case "Bezduszny":
                     this.name = "Bezduszny Łuk"
                     this.HP = 0;
                     this.ATK = 7;
-                    this.SPD = 2;
+                    this.SPD = 1;
                     this.STN = 1;
                     this.DEF = 0;
                     this.USG = 0;
@@ -185,11 +187,11 @@ class Item {
 
                 case "Runiczny":
                     this.name = "Runiczny Łuk"
-                    this.HP = 2;
+                    this.HP = 1;
                     this.ATK = 1;
                     this.SPD = 1;
                     this.STN = 8;
-                    this.DEF = 3;
+                    this.DEF = 0;
                     this.USG = 2;
                     break;
                 
@@ -208,19 +210,19 @@ class Item {
             switch(this.type){
                 case "święty":
                     this.name = "Święty Sztylet"
-                    this.HP = 2;
-                    this.ATK = 1;
-                    this.SPD = 5;
-                    this.STN = 3;
-                    this.DEF = 1;
-                    this.USG = 1;
+                    this.HP = 0;
+                    this.ATK = 2;
+                    this.SPD = 4;
+                    this.STN = 2;
+                    this.DEF = 0;
+                    this.USG = 0;
                     break;
 
                 case "smoka mroku":
-                    this.name = "Miecz Smoka Mroku"
+                    this.name = "Sztylet Smoka Mroku"
                     this.HP = 1;
                     this.ATK = 5;
-                    this.SPD = 2;
+                    this.SPD = 1;
                     this.STN = 0;
                     this.DEF = 1;
                     this.USG = 0;
@@ -228,7 +230,7 @@ class Item {
 
                 case "Potężnego Diabła":
                     this.name = "Sztylet Potężnego Diabła"
-                    this.HP = 4;
+                    this.HP = 0;
                     this.ATK = 2;
                     this.SPD = 0;
                     this.STN = 3;
@@ -240,20 +242,20 @@ class Item {
                     this.name = "Bezduszny Sztylet"
                     this.HP = 0;
                     this.ATK = 9;
-                    this.SPD = 2;
+                    this.SPD = 1;
                     this.STN = 0;
                     this.DEF = 0;
-                    this.USG = 0;
+                    this.USG = 1;
                     break;
 
                 case "Runiczny":
                     this.name = "Runiczny Sztylet"
-                    this.HP = 3;
-                    this.ATK = 0;
+                    this.HP = 0;
+                    this.ATK = 1;
                     this.SPD = 3;
-                    this.STN = 5;
-                    this.DEF = 2;
-                    this.USG = 3;
+                    this.STN = 4;
+                    this.DEF = 1;
+                    this.USG = 0;
                     break;
                 
                 default:
@@ -264,11 +266,11 @@ class Item {
         }
     }
 
-    let holy = new miecz(type="święty")
-    holy.type
+    //let holy = new miecz(type="święty")
+    //holy.type
 
-    let bezduch = new miecz(type="bezduch")
-    bezduch.type
+    //let bezduch = new miecz(type="bezduch")
+    //bezduch.type
 
-    let tarcza = new Item()
-    tarcza.type
+    //let tarcza = new Item()
+    //tarcza.type
