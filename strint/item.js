@@ -77,12 +77,13 @@ class Item {
         }
     }
     class lanca extends Item {
-        constructor(name, type) {
+        constructor(type) {
+            super()
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
             this.type = type;
 
             switch(this.type){
-                case "święty":
+                case "święty RDR":
                     this.name = "Święta Lanca"
                     this.HP = 0;
                     this.ATK = 2;
@@ -92,7 +93,7 @@ class Item {
                     this.USG = 1;
                     break;
 
-                case "smoka mroku":
+                case "smoka mroku RDR":
                     this.name = "Lanca Smoka Mroku"
                     this.HP = 1;
                     this.ATK = 5;
@@ -102,7 +103,7 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "Potężnego Diabła":
+                case "Potężnego Diabła RDR":
                     this.name = "Lanca Potężnego Diabła"
                     this.HP = 1;
                     this.ATK = 3;
@@ -112,7 +113,7 @@ class Item {
                     this.USG = 1;
                     break;
 
-                case "Bezduszny":
+                case "Bezduszny RDR":
                     this.name = "Bezduszna Lanca"
                     this.HP = 1;
                     this.ATK = 5;
@@ -122,7 +123,7 @@ class Item {
                     this.USG = 1;
                     break;
 
-                case "Runiczny":
+                case "Runiczny RDR":
                     this.name = "Runiczna Lanca"
                     this.HP = 0;
                     this.ATK = 2;
@@ -140,12 +141,13 @@ class Item {
         }
     }
     class luk extends Item {
-        constructor(name, type) {
+        constructor(type) {
+            super()
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
             this.type = type;
 
             switch(this.type){
-                case "święty":
+                case "święty ARCH":
                     this.name = "Święty Łuk"
                     this.HP = 1;
                     this.ATK = 7;
@@ -155,7 +157,7 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "smoka mroku":
+                case "smoka mroku ARCH":
                     this.name = "Łuk Smoka Mroku"
                     this.HP = 0;
                     this.ATK = 5;
@@ -165,7 +167,7 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "Potężnego Diabła":
+                case "Potężnego Diabła ARCH":
                     this.name = "Łuk Potężnego Diabła"
                     this.HP = 2;
                     this.ATK = 2;
@@ -175,7 +177,7 @@ class Item {
                     this.USG = 1;
                     break;
 
-                case "Bezduszny":
+                case "Bezduszny ARCH":
                     this.name = "Bezduszny Łuk"
                     this.HP = 0;
                     this.ATK = 7;
@@ -185,7 +187,7 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "Runiczny":
+                case "Runiczny ARCH":
                     this.name = "Runiczny Łuk"
                     this.HP = 1;
                     this.ATK = 1;
@@ -203,12 +205,13 @@ class Item {
         }
     }
     class sztylet extends Item {
-        constructor(name, type) {
+        constructor(type) {
+            super()
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
             this.type = type;
 
             switch(this.type){
-                case "święty":
+                case "święty ASSN":
                     this.name = "Święty Sztylet"
                     this.HP = 0;
                     this.ATK = 2;
@@ -218,7 +221,7 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "smoka mroku":
+                case "smoka mroku ASSN":
                     this.name = "Sztylet Smoka Mroku"
                     this.HP = 1;
                     this.ATK = 5;
@@ -228,7 +231,7 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "Potężnego Diabła":
+                case "Potężnego Diabła ASSN":
                     this.name = "Sztylet Potężnego Diabła"
                     this.HP = 0;
                     this.ATK = 2;
@@ -238,7 +241,7 @@ class Item {
                     this.USG = 0;
                     break;
 
-                case "Bezduszny":
+                case "Bezduszny ASSN":
                     this.name = "Bezduszny Sztylet"
                     this.HP = 0;
                     this.ATK = 9;
@@ -248,7 +251,7 @@ class Item {
                     this.USG = 1;
                     break;
 
-                case "Runiczny":
+                case "Runiczny ASSN":
                     this.name = "Runiczny Sztylet"
                     this.HP = 0;
                     this.ATK = 1;

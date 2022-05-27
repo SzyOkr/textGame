@@ -12,12 +12,14 @@ class Panc {
     
     }
     class Zbroja extends Panc{
+        
         constructor(name, type) {
+            super()
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
             this.type = type;
 
             switch(this.type){
-                case "zbr księżycowa":
+                case "zbr księżycowa KN":
                     this.name = "Księżycowa Zbroja"
                     this.HP = 5;
                     this.ATK = 0;
@@ -27,7 +29,7 @@ class Panc {
                     this.USG = 1;
                     break;
 
-                case "zbr smoka mroku":
+                case "zbr smoka mroku KN":
                     this.name = "Zbroja Smoka Mroku"
                     this.HP = 2;
                     this.ATK = 0;
@@ -37,7 +39,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr piekielna":
+                case "zbr piekielna KN":
                     this.name = "Piekielna Zbroja"
                     this.HP = 4;
                     this.ATK = 0;
@@ -47,7 +49,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr czarnego ognia":
+                case "zbr czarnego ognia KN":
                     this.name = "Zbroja z Czarnego Ognia"
                     this.HP = 2;
                     this.ATK = 0;
@@ -57,7 +59,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr runiczna":
+                case "zbr runiczna KN":
                     this.name = "RUniczna Zbroja"
                     this.HP = 3;
                     this.ATK = 0;
@@ -68,19 +70,20 @@ class Panc {
                     break;
                 
                 default:
-                    throw new Error("podano zły typ miecza")
+                    throw new Error("podano zły typ zbroi")
             }
 
            
         }
     }
     class Zbroja_Jezdzca extends Panc{
-        constructor(name, type) {
+        constructor(type) {
+            super()
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
             this.type = type;
 
             switch(this.type){
-                case "zbr księżycowa":
+                case "zbr księżycowa RDR":
                     this.name = "Księżycowa Zbroja Jeźdzcy"
                     this.HP = 4;
                     this.ATK = 0;
@@ -90,7 +93,7 @@ class Panc {
                     this.USG = 1;
                     break;
 
-                case "zbr smoka mroku":
+                case "zbr smoka mroku RDR":
                     this.name = "Zbroja Jeźdzcy Smoka Mroku"
                     this.HP = 2;
                     this.ATK = 0;
@@ -100,7 +103,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr piekielna":
+                case "zbr piekielna RDR":
                     this.name = "Piekielna Zbroja Jeźdzcy"
                     this.HP = 4;
                     this.ATK = 0;
@@ -110,7 +113,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr czarnego ognia":
+                case "zbr czarnego ognia RDR":
                     this.name = "Zbroja Jeźdzcy z Czarnego Ognia"
                     this.HP = 2;
                     this.ATK = 2;
@@ -120,7 +123,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr runiczna":
+                case "zbr runiczna RDR":
                     this.name = "Runiczna Zbroja Jeźdzcy"
                     this.HP = 3;
                     this.ATK = 1;
@@ -138,12 +141,13 @@ class Panc {
         }
     }
     class Stroj_Strzelca extends Panc{
-        constructor(name, type) {
+        constructor(type) {
+            super()
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
             this.type = type;
 
             switch(this.type){
-                case "zbr księżycowa":
+                case "zbr księżycowa ARCH":
                     this.name = "Księżycowy Strój strzelca"
                     this.HP = 5;
                     this.ATK = 1;
@@ -153,7 +157,7 @@ class Panc {
                     this.USG = 1;
                     break;
 
-                case "zbr smoka mroku":
+                case "zbr smoka mroku ARCH":
                     this.name = "Strój Strzelca Smoka Mroku"
                     this.HP = 2;
                     this.ATK = 0;
@@ -163,7 +167,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr piekielna":
+                case "zbr piekielna ARCH":
                     this.name = "Piekielny Strój Strzelca"
                     this.HP = 4;
                     this.ATK = 0;
@@ -173,7 +177,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr czarnego ognia":
+                case "zbr czarnego ognia ARCH":
                     this.name = "Strój Strzelca z Czarnego Ognia"
                     this.HP = 2;
                     this.ATK = 0;
@@ -183,7 +187,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr runiczna":
+                case "zbr runiczna ARCH":
                     this.name = "Runiczny Strój strzelca"
                     this.HP = 3;
                     this.ATK = 0;
@@ -200,12 +204,13 @@ class Panc {
         }
     }
     class Stroj_Zabojcy extends Panc{
-        constructor(name, type) {
+        constructor(type) {
+            super()
             // super(HP=, ATK=, SPD=, STN=, DEF=, USG=,name)
             this.type = type;
 
             switch(this.type){
-                case "zbr księżycowa":
+                case "zbr księżycowa ASSN":
                     this.name = "Księżycowy Strój Zabójcy"
                     this.HP = 2;
                     this.ATK = 0;
@@ -215,7 +220,7 @@ class Panc {
                     this.USG = 1;
                     break;
 
-                case "zbr smoka mroku":
+                case "zbr smoka mroku ASSN":
                     this.name = "Strój Zabójcy Smoka Mroku"
                     this.HP = 2;
                     this.ATK = 0;
@@ -225,7 +230,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr piekielna":
+                case "zbr piekielna ASSN":
                     this.name = "Piekielny Strój Zabójcy"
                     this.HP = 4;
                     this.ATK = 0;
@@ -235,7 +240,7 @@ class Panc {
                     this.USG = 1;
                     break;
 
-                case "zbr czarnego ognia":
+                case "zbr czarnego ognia ASSN":
                     this.name = "Strój Zabójcy z Czarnego Ognia"
                     this.HP = 2;
                     this.ATK = 1;
@@ -245,7 +250,7 @@ class Panc {
                     this.USG = 0;
                     break;
 
-                case "zbr runiczna":
+                case "zbr runiczna ASSN":
                     this.name = "Runiczny Strój Zabójcy"
                     this.HP = 3;
                     this.ATK = 0;
