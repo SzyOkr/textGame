@@ -2,6 +2,7 @@ const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
 
 let state = {}
+let klasa = {}
 
 function startGame() {
   state = {}
@@ -36,23 +37,46 @@ function selectOption(option) {
     return startGame()
   }
   state = Object.assign(state, option.setState)
+  if (option.action)
+    option.action()
   showTextNode(nextTextNodeId)
 }
+
 
 const textNodes = [
   {
     id: 1,
-    text: 'Obudziłeś się w dziwnym miejscu i zauważyłeś słoik z białą mazią obok ciebie.',
+    text: 'Obudziłeś się w dziwnym miejscu i zauważyłeś 3 bohaterów obok ciebie. Byli nimi:',
     options: [
       {
-        text: 'Weź maź',
-        setState: { blueGoo: true },
-        nextText: 2
+        text: 'Rycerz',
+        setState: { Rycerz: true },
+        nextText: 2,
+        action: function () {
+          document.getElementById("pierwszyAvatar").src = './img/knight.png'
+         }
       },
       {
-        text: 'Zostaw maź',
+        text: 'Łucznik',
+        setState: {Łucznik: true},
+        nextText: 2,
+        action: function () {
+          document.getElementById("pierwszyAvatar").src = './img/knight.png'
+         }
+      },
+      {
+        text: 'Jeźdzca',
+        setState: { Jezdzca: true },
+        nextText: 2,
+        action: function () {
+          document.getElementById("pierwszyAvatar").src = './img/knight.png'
+         }
+      },
+      {
+        text: 'Zabójca',
+        setState: { Zabojca: true },
         nextText: 2
-      }
+      },
     ]
   },
   {
