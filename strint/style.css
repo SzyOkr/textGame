@@ -140,43 +140,6 @@ vertical-align: inherit;
 font-weight: bold;
 text-align: -internal-center;
 }
-/*-----------lewa strzalka---------*/
-/*.btn-change-weaponL
-{
-margin-left: 250px;
-margin-bottom: 10px;
-}
-/*-----------prawa strzalka---------*/
-/*.btn-change-weaponR
-/*{
-/*margin-left: 30px;
-/*margin-bottom: 10px;
-/*}
-/*//*-----------lewa strzalka---------*/
-/*.btn-change-armorL
-/*{
-/*margin-left: 60px;
-/*margin-bottom: 10px;
-/*}
-/*//*-----------prawa strzalka---------*/
-/*.btn-change-armorR
-/*{
-/*margin-left: 30px;
-/*margin-bottom: 10px;
-/*}
-/*//*-----------lewa strzalka---------*/
-/*.btn-change-specialL
-/*{
-/*margin-left: 130px;
-/*margin-bottom: 10px;
-/*}
-/*//*-----------prawa strzalka--------*/
-/*.btn-change-specialR
-/*{
-/*margin-left: 30px;
-/*margin-bottom: 10px;
-/*}
-/**/
 .eqtable
 {
 border: 2px black solid;
@@ -230,15 +193,21 @@ margin-top: 1%;
 display: flex;
 }
 
-#podguziory1 
+.podguziory1 
 {
-margin: 5%;
+margin-top: 3%;
+margin-left: 5%;
+margin-bottom: 15px;
 }
-#podguziory2
+.podguziory2
 {
-margin: 5%;
+margin-top: 3%;
+margin-left: 15vmin;
+margin-bottom: 15px;
 }
-#podguziory3 
+.podguziory3 
 {
-margin: 5%;
+margin-top: 3%;
+margin-left: 20vmin;
+margin-bottom: 15px;
 }

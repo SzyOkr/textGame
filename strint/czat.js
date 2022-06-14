@@ -1,8 +1,8 @@
 const textElement = document.getElementById('text')
 const optionButtonsElement = document.getElementById('option-buttons')
 
-let state = {}
-let klasa = {}
+let state = {
+}
 
 function startGame() {
   state = {}
@@ -10,36 +10,67 @@ function startGame() {
 }
 
 function showTextNode(textNodeIndex) {
+  
+  // ukradnij fragment scenariusza z id podanym wyżej
   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+  
+  // wrzuć tekst z scenariusza
   textElement.innerText = textNode.text
+  
+  console.log(`Generuje dialog ${textNode.text}`);
+
+  // usuwanie poprzedni opcji
   while (optionButtonsElement.firstChild) {
     optionButtonsElement.removeChild(optionButtonsElement.firstChild)
   }
 
-  textNode.options.forEach(option => {
-    if (showOption(option)) {
-      const button = document.createElement('button')
-      button.innerText = option.text
-      button.classList.add('btn')
-      button.addEventListener('click', () => selectOption(option))
-      optionButtonsElement.appendChild(button)
+  // wyrenderuj wszystkie przyciski (pole: options)
+  textNode.options.forEach(function (option) {
+    console.log(`Próbuje generować opcje ${option.text}`);
+
+    if (option.requiredState) {
+        console.log(option.requiredState());
+        if (!option.requiredState())
+          return;
     }
+    
+    console.log(`Generuje opcje ${option.text}`);
+
+    //stwórz element <Button/>
+    const button = document.createElement('button')
+
+    //wypełnij content jego
+    button.innerText = option.text
+
+    //dodaj classę z css'em
+    button.classList.add('btn')
+
+    // podepnij event kliknięcia
+    // tutaj bindujesz funkcje która jest inna dla każdego przycisku
+    // (każdy przycisk ma inne argument options)
+    button.addEventListener('click', () => selectOption(option))
+
+    // wrzuć go do DOM
+    optionButtonsElement.appendChild(button)
+    
   })
 }
 
-function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
-}
-
 function selectOption(option) {
-  const nextTextNodeId = option.nextText
-  if (nextTextNodeId <= 0) {
-    return startGame()
-  }
-  state = Object.assign(state, option.setState)
+  // to merguje dwa state z priorytetem na ten nowy
+
+  if (option.setState)
+    state = { ...state, ...option.setState };
+  console.log(state)
+
+  // jeżeli opcja zawiera pole action to je wykona jak funkcje
   if (option.action)
     option.action()
-  showTextNode(nextTextNodeId)
+
+
+  // wyświetl następny tek
+  if (option.nextText)
+    showTextNode(option.nextText);
 }
 
 
@@ -54,166 +85,233 @@ const textNodes = [
         nextText: 2,
         action: function () {
           document.getElementById("pierwszyAvatar").src = './img/knight.png'
-         }
+        }
       },
       {
         text: 'Łucznik',
-        setState: {Łucznik: true},
+        setState: { Łucznik: true },
         nextText: 2,
         action: function () {
-          document.getElementById("pierwszyAvatar").src = './img/knight.png'
-         }
+          document.getElementById("pierwszyAvatar").src = './img/archer.svg'
+        }
       },
       {
         text: 'Jeźdzca',
         setState: { Jezdzca: true },
         nextText: 2,
         action: function () {
-          document.getElementById("pierwszyAvatar").src = './img/knight.png'
-         }
+          document.getElementById("pierwszyAvatar").src = './img/rider.svg'
+        }
       },
       {
         text: 'Zabójca',
         setState: { Zabojca: true },
-        nextText: 2
+        nextText: 2,
+        action: function () {
+          document.getElementById("pierwszyAvatar").src = './img/assasin.svg'
+        }
       },
     ]
   },
   {
     id: 2,
-    text: 'Wyruszasz w poszukiwaniu odpowiedzi na pytanie, gdzie jesteś, gdy natykasz się na kupca.',
+    text: 'Kolejnym bohaterem był:',
     options: [
       {
-        text: 'Wymień maź wzamian za miecz',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, sword: true },
-        nextText: 3
+        text: 'Rycerz',
+        requiredState: () => state.Rycerz === undefined,
+        setState: { Rycerz: true },
+        nextText: 3,
+        action: function () {
+          document.getElementById("drugiAvatar").src = './img/knight.png'
+        }
       },
       {
-        text: 'Wymień maź wzamian za tarczę',
-        requiredState: (currentState) => currentState.blueGoo,
-        setState: { blueGoo: false, shield: true },
-        nextText: 3
+        text: 'Łucznik',
+        setState: { Łucznik: true },
+        requiredState: () => state.Łucznik === undefined,
+        nextText: 3,
+        action: function () {
+          document.getElementById("drugiAvatar").src = './img/archer.svg'
+        }
       },
       {
-        text: 'Odejdź od kupca',
-        nextText: 3
-      }
+        text: 'Jeźdzca',
+        setState: { Jezdzca: true },
+        requiredState: () => state.Jezdzca === undefined,
+        nextText: 3,
+        action: function () {
+          document.getElementById("drugiAvatar").src = './img/rider.svg'
+        }
+      },
+      {
+        text: 'Zabójca',
+        setState: { Zabojca: true },
+        requiredState: () => state.Zabojca === undefined,
+        nextText: 3,
+        action: function () {
+          document.getElementById("drugiAvatar").src = './img/assasin.svg'
+        }
+      },
     ]
   },
   {
     id: 3,
-    text: 'Po opuszczeniu kupca zaczynasz czuć się zmęczony i natrafiasz na małe miasteczko obok groźnie wyglądającego zamku.',
+    text: 'Ostatnim z nich był:',
     options: [
       {
-        text: 'Zwiedź zamek',
-        nextText: 4
+        text: 'Rycerz',
+        requiredState: () => state.Rycerz === undefined,
+        setState: { Rycerz: true },
+        nextText: 4,
+        action: function () {
+          document.getElementById("trzeciAvatar").src = './img/knight.png'
+        }
       },
       {
-        text: 'Znajdź pokój do spania w mieście',
-        nextText: 5
+        text: 'Łucznik',
+        setState: { Łucznik: true },
+        requiredState: () => state.Łucznik === undefined,
+        nextText: 4,
+        action: function () {
+          document.getElementById("trzeciAvatar").src = './img/archer.svg'
+        }
       },
       {
-        text: 'Znajdź siano w stajni do spania',
-        nextText: 6
-      }
+        text: 'Jeźdzca',
+        setState: { Jezdzca: true },
+        requiredState: () => state.Jezdzca === undefined,
+        nextText: 4,
+        action: function () {
+          document.getElementById("trzeciAvatar").src = './img/rider.svg'
+        }
+      },
+      {
+        text: 'Zabójca',
+        setState: { Zabojca: true },
+        requiredState: () => state.Zabojca === undefined,
+        nextText: 4,
+        action: function () {
+          document.getElementById("trzeciAvatar").src = './img/assasin.svg'
+        }
+      },
     ]
   },
   {
     id: 4,
-    text: 'Jesteś tak zmęczony, że zasypiasz podczas zwiedzania zamku i zostajesz zabity przez jakiegoś strasznego księdza we śnie.',
+    text: 'Teraz, razem wszyscy poszliście do najbliższego miasta, aby trochę zarobić na jedzenie',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Następny',
+        nextText: 5
       }
     ]
   },
   {
     id: 5,
-    text: 'Bez pieniędzy na zakup pokoju włamujesz się do najbliższej gospody i zasypiasz. Po kilku godzinach snu odnajduje cię właściciel karczmy i każe strażnikowi zamknąć cię w celi.',
+    text: 'Koło baru spotykacie "Ulfrika Koparke", który oferuję wam zadanie kradzieży jabłka od Steva - miejscowego inkwizytora.',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Zgódź się',
+        nextText: 6
+      },
+      {
+        text: 'Zrezygnuj',
+        nextText: 12
       }
     ]
   },
   {
     id: 6,
-    text: 'Budzisz się wypoczęty i pełen energii gotowy do zwiedzania pobliskiego zamku.',
+    text: 'Zbliżacie się do domu Steva. Teraz należy wybrać, kto ukradnie jabłko?',
     options: [
       {
-        text: 'Zwiedź zamek',
-        nextText: 7
+        text: 'Rycerz',
+        requiredState: () => state.Rycerz == true,
+        nextText: 7,
+      },
+      {
+        text: 'Łucznik',
+        requiredState: () => state.Łucznik == true,
+        nextText: 8,
+      },
+      {
+        text: 'Jeźdzca',
+        requiredState: () => state.Jezdzca == true,
+        nextText: 9,
+      },
+      {
+        text: 'Zabójca',
+        requiredState: () => state.Zabojca == true,
+        nextText: 10,
       }
+
     ]
   },
   {
     id: 7,
-    text: 'Podczas eksploracji zamku na swojej drodze natrafisz na straszliwego księdza.',
+    text: 'Rycerz wchodzi do środka budynku mordując wszystkich w środku i zabierając jabłko. Zatrzymuje was miejscowa straż pod władaniem Majkela.',
     options: [
       {
-        text: 'Próbuj uciekać',
-        nextText: 8
-      },
-      {
-        text: 'Zaatakuj go mieczem',
-        requiredState: (currentState) => currentState.sword,
-        nextText: 9
-      },
-      {
-        text: 'Schowaj się za tarczą',
-        requiredState: (currentState) => currentState.shield,
-        nextText: 10
-      },
-      {
-        text: 'Rzuć w niego białą mazią',
-        requiredState: (currentState) => currentState.blueGoo,
-        nextText: 11
+        text: 'Restart',
+        action: homar
       }
     ]
   },
   {
     id: 8,
-    text: 'Twoje próby ucieczki są daremne, a ksiądz bez problemu cię łapie.',
+    text: `Łucznik wystrzelił strzałe z przyczepioną liną i wyciągnął jabłko z domu Steva. Wszystko widziała straż pod władaniem Majkela i zamkneła was w lochu.`,
     options: [
       {
         text: 'Restart',
-        nextText: -1
+        action: homar
       }
     ]
   },
   {
     id: 9,
-    text: 'Głupio myślałeś, że tego księdza można zabić zwykłym mieczem.',
+    text: 'Jeźdzca szarżuje w środek budynku, niszczy wszystko a następnie wywozi skrzynie. Razem uciekacie za granice miaste, aby uniknąc straży. Skrzynia jest pusta.',
     options: [
       {
         text: 'Restart',
-        nextText: -1
+        action: homar
       }
     ]
   },
   {
     id: 10,
-    text: 'Ksiądz śmiał się, gdy chowałeś się za tarczą po czym zjadł cię.',
+    text: 'Assasin wchodzi i wychodzi z jabłkiem. Udało wam się',
     options: [
       {
-        text: 'Restart',
-        nextText: -1
+        text: 'Oddaj jabłko Ulfrikowi',
+        nextText: 11
       }
     ]
   },
   {
     id: 11,
-    text: 'Rzuciłeś słoikiem mazi w księdza i eksplodował. Gdy opadł kurz, zobaczyłeś, że ksiądz został zniszczony. Widząc swoje zwycięstwo, decydujesz się przejąć ten zamek jako swój i przeżyć tam resztę swoich dni.',
+    text: 'Odnosicie jabłko Ulfrikowi Koparce, otrzymujecie zapłate i opuszczacie miasto.',
     options: [
       {
-        text: 'Gratuluję. Zagraj ponownie',
-        nextText: -1
+        text: 'Aby grać dalej kup DLC (nie ma DLC)',
+        action: homar
       }
     ]
-  }
+  },
+  {
+    id: 12,
+    text: 'Nie no brachu, takiego zadania nie przyjąć?',
+    options: [
+      {
+        text: 'Restart',
+        action: homar
+      },
+    ],
+  },
 ]
+
+function homar() {
+  document.location.reload(true)
+}
 
 startGame()
